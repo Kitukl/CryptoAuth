@@ -84,4 +84,18 @@ public class AuthController : ControllerBase
         if (!result.isSuccess) return BadRequest(result.Errors);
         return result.Value;
     }
+
+    [HttpPost("logout")]
+    public async Task<ActionResult<string>> Logout(LogoutCommand command)
+    {
+        var result = await _mediatr.Send(command);
+        if (!result.isSuccess)
+        {
+            return BadRequest(result.Errors);
+        }
+        var context = _accessor.HttpContext;
+        context?.Response.Cookies.Delete("jwt");
+
+        return Ok("User logout!");
+    }
 }
