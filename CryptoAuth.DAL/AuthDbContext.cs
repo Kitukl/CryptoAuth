@@ -8,6 +8,7 @@ namespace CryptoAuth.DAL;
 public class AuthDbContext(DbContextOptions<AuthDbContext> options) : IdentityDbContext<IdentityUser>(options)
 {
     public DbSet<RefreshToken> RefreshTokens { get; set; }
+    public DbSet<ResetPasswordCode> ResetPasswordCodes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

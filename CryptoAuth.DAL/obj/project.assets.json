@@ -614,6 +614,24 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Http/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Logging": "2.1.0",
+          "Microsoft.Extensions.Options": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Identity.Core/9.0.6": {
         "type": "package",
         "dependencies": {
@@ -741,6 +759,19 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Npgsql/9.0.3": {
         "type": "package",
         "dependencies": {
@@ -773,6 +804,74 @@
           "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "SendGrid/9.29.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "starkbank-ecdsa": "[1.3.3, 2.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SendGrid.CSharp.HTTP.Client/3.4.12": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SendGrid.CSharp.HTTP.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SendGrid.CSharp.HTTP.Client.dll": {}
+        }
+      },
+      "SendGrid.Extensions.DependencyInjection/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Http": "2.1.0",
+          "SendGrid": "9.24.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SendGrid.SmtpApi/1.4.6": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.SmtpApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.SmtpApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "starkbank-ecdsa/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
         }
       },
       "System.CodeDom/6.0.0": {
@@ -2329,6 +2428,19 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Http/2.1.0": {
+      "sha512": "vkSkGa1UIZVlAd18oDhrtoawN/q7fDemJcVpT9+28mP7bP0I8zKLSLRwqF++GmPs/7e0Aqlo6jpZm3P7YYS0ag==",
+      "type": "package",
+      "path": "microsoft.extensions.http/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.2.1.0.nupkg.sha512",
+        "microsoft.extensions.http.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Identity.Core/9.0.6": {
       "sha512": "UByIcYE2r8k2k8Mh+Me9qFg5jzJQ8OFe5r1bePqvI15iK118PsjUtJXppFp3miuZpMOMpYKZM9xfLZ/64MhcNg==",
       "type": "package",
@@ -2558,6 +2670,33 @@
         "readme.md"
       ]
     },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "Npgsql/9.0.3": {
       "sha512": "tPvY61CxOAWxNsKLEBg+oR646X4Bc8UmyQ/tJszL/7mEmIXQnnBhVJZrZEEUv0Bstu0mEsHZD5At3EO8zQRAYw==",
       "type": "package",
@@ -2588,6 +2727,93 @@
         "npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
         "npgsql.entityframeworkcore.postgresql.nuspec",
         "postgresql.png"
+      ]
+    },
+    "SendGrid/9.29.3": {
+      "sha512": "nb/zHePecN9U4/Bmct+O+lpgK994JklbCCNMIgGPOone/DngjQoMCHeTvkl+m0Nglvm0dqMEshmvB4fO8eF3dA==",
+      "type": "package",
+      "path": "sendgrid/9.29.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SendGrid.dll",
+        "lib/net40/SendGrid.pdb",
+        "lib/net40/SendGrid.xml",
+        "lib/net452/SendGrid.dll",
+        "lib/net452/SendGrid.pdb",
+        "lib/net452/SendGrid.xml",
+        "lib/netstandard1.3/SendGrid.dll",
+        "lib/netstandard1.3/SendGrid.pdb",
+        "lib/netstandard1.3/SendGrid.xml",
+        "lib/netstandard2.0/SendGrid.dll",
+        "lib/netstandard2.0/SendGrid.pdb",
+        "lib/netstandard2.0/SendGrid.xml",
+        "sendgrid.9.29.3.nupkg.sha512",
+        "sendgrid.nuspec"
+      ]
+    },
+    "SendGrid.CSharp.HTTP.Client/3.4.12": {
+      "sha512": "MQ2WJx0ST5JzrHDRA8+d+5NHJTI8p+/MTA7J8SY5NtMiH3wYgLjHhrZHXRtd1vh+3cXSeyRM/VYbmTbqC0Aa/A==",
+      "type": "package",
+      "path": "sendgrid.csharp.http.client/3.4.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/SendGrid.CSharp.HTTP.Client.dll",
+        "sendgrid.csharp.http.client.3.4.12.nupkg.sha512",
+        "sendgrid.csharp.http.client.nuspec"
+      ]
+    },
+    "SendGrid.Extensions.DependencyInjection/1.0.1": {
+      "sha512": "M3dHAkRIIDWvGNro5S25xjQ+nvUTomZ5er12TL0Re+G2UwIntMvO2OthECb3SV28AvOtDd4yZERjdHTrJ+gD1w==",
+      "type": "package",
+      "path": "sendgrid.extensions.dependencyinjection/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SendGrid.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/SendGrid.Extensions.DependencyInjection.xml",
+        "sendgrid.extensions.dependencyinjection.1.0.1.nupkg.sha512",
+        "sendgrid.extensions.dependencyinjection.nuspec"
+      ]
+    },
+    "SendGrid.SmtpApi/1.4.6": {
+      "sha512": "fBFC50+5q4ZCJJ/BfaSF7x/j/BnTg2qYkegwn1pi9xs2ZuPHeCeDTgTbvcktGtWS667tp3wKoxfbc6YJrccvXQ==",
+      "type": "package",
+      "path": "sendgrid.smtpapi/1.4.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SendGrid.SmtpApi.dll",
+        "lib/net40/SendGrid.SmtpApi.pdb",
+        "lib/net40/SendGrid.SmtpApi.xml",
+        "lib/net452/SendGrid.SmtpApi.dll",
+        "lib/net452/SendGrid.SmtpApi.pdb",
+        "lib/net452/SendGrid.SmtpApi.xml",
+        "lib/netstandard1.3/SendGrid.SmtpApi.dll",
+        "lib/netstandard1.3/SendGrid.SmtpApi.pdb",
+        "lib/netstandard1.3/SendGrid.SmtpApi.xml",
+        "lib/netstandard2.0/SendGrid.SmtpApi.dll",
+        "lib/netstandard2.0/SendGrid.SmtpApi.pdb",
+        "lib/netstandard2.0/SendGrid.SmtpApi.xml",
+        "sendgrid.smtpapi.1.4.6.nupkg.sha512",
+        "sendgrid.smtpapi.nuspec"
+      ]
+    },
+    "starkbank-ecdsa/1.3.3": {
+      "sha512": "OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
+      "type": "package",
+      "path": "starkbank-ecdsa/1.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/StarkbankEcdsa.dll",
+        "lib/net452/StarkbankEcdsa.dll",
+        "lib/netstandard1.3/StarkbankEcdsa.dll",
+        "lib/netstandard2.0/StarkbankEcdsa.dll",
+        "lib/netstandard2.1/StarkbankEcdsa.dll",
+        "starkbank-ecdsa.1.3.3.nupkg.sha512",
+        "starkbank-ecdsa.nuspec"
       ]
     },
     "System.CodeDom/6.0.0": {
@@ -2984,7 +3210,11 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.6",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.4"
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.4",
+      "SendGrid >= 9.29.3",
+      "SendGrid.CSharp.HTTP.Client >= 3.4.12",
+      "SendGrid.Extensions.DependencyInjection >= 1.0.1",
+      "SendGrid.SmtpApi >= 1.4.6"
     ]
   },
   "packageFolders": {
@@ -3050,6 +3280,22 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[9.0.4, )"
+          },
+          "SendGrid": {
+            "target": "Package",
+            "version": "[9.29.3, )"
+          },
+          "SendGrid.CSharp.HTTP.Client": {
+            "target": "Package",
+            "version": "[3.4.12, )"
+          },
+          "SendGrid.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          },
+          "SendGrid.SmtpApi": {
+            "target": "Package",
+            "version": "[1.4.6, )"
           }
         },
         "imports": [
@@ -3071,5 +3317,17 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SendGrid.CSharp.HTTP.Client 3.4.12' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SendGrid.CSharp.HTTP.Client",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

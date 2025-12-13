@@ -12,3 +12,4 @@
 /Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/obj/Debug/net9.0/ref/CryptoAuth.DAL.dll
 /Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/bin/Debug/net9.0/CryptoAuth.DAL.runtimeconfig.json
 /Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/obj/Debug/net9.0/CryptoAuth.DAL.genruntimeconfig.cache
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/obj/Debug/net9.0/CryptoAuth.DAL.sourcelink.json

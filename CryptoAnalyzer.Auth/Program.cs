@@ -10,8 +10,10 @@ using dotenv.net;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using SendGrid;
 
 DotEnv.Load();
 
@@ -20,8 +22,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables();
 
 builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandler<,>));
-builder.Services.AddScoped(typeof(IRepository<IdentityUser>), typeof(UserRepository));
 builder.Services.AddScoped(typeof(IRepository<RefreshToken>), typeof(RefreshTokenRepository));
+builder.Services.AddScoped(typeof(IRepository<ResetPasswordCode>), typeof(RessetPasswordCodeRepository));
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddScoped<IEmailSender, EmailSender>();
+
+builder.Services.AddScoped<ISendGridClient>(sg => new SendGridClient(builder.Configuration.GetValue<string>("EmailSettings:ApiKey")));
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();

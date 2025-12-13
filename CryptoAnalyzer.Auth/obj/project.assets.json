@@ -1063,7 +1063,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.11": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.1": {
         "type": "package",
         "compile": {
           "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -1157,6 +1157,24 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Http/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Logging": "2.1.0",
+          "Microsoft.Extensions.Options": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Identity.Core/9.0.11": {
         "type": "package",
         "dependencies": {
@@ -1214,10 +1232,11 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/9.0.11": {
+      "Microsoft.Extensions.Logging.Abstractions/10.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.11"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.1",
+          "System.Diagnostics.DiagnosticSource": "10.0.1"
         },
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.dll": {
@@ -1778,6 +1797,74 @@
           }
         }
       },
+      "SendGrid/9.29.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "starkbank-ecdsa": "[1.3.3, 2.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SendGrid.CSharp.HTTP.Client/3.4.12": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SendGrid.CSharp.HTTP.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SendGrid.CSharp.HTTP.Client.dll": {}
+        }
+      },
+      "SendGrid.Extensions.DependencyInjection/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Http": "2.1.0",
+          "SendGrid": "9.24.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SendGrid.SmtpApi/1.4.6": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.SmtpApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.SmtpApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "starkbank-ecdsa/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -2073,24 +2160,20 @@
           }
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/10.0.1": {
         "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Tracing": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading": "4.3.0"
-        },
         "compile": {
-          "lib/netstandard1.3/_._": {
+          "lib/net9.0/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+          "lib/net9.0/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "System.Diagnostics.Tools/4.3.0": {
@@ -3227,6 +3310,10 @@
           "JWT.Extensions.AspNetCore": "10.1.1",
           "Mailjet.Api": "3.0.0",
           "MediatR": "13.1.0",
+          "SendGrid": "9.29.3",
+          "SendGrid.CSharp.HTTP.Client": "3.4.12",
+          "SendGrid.Extensions.DependencyInjection": "1.0.1",
+          "SendGrid.SmtpApi": "1.4.6",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
         },
         "compile": {
@@ -3241,7 +3328,11 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.6",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "SendGrid": "9.29.3",
+          "SendGrid.CSharp.HTTP.Client": "3.4.12",
+          "SendGrid.Extensions.DependencyInjection": "1.0.1",
+          "SendGrid.SmtpApi": "1.4.6"
         },
         "compile": {
           "bin/placeholder/CryptoAuth.DAL.dll": {}
@@ -5187,21 +5278,22 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.11": {
-      "sha512": "+ZxxZzcVU+IEzq12GItUzf/V3mEc5nSLiXijwvDc4zyhbjvSZZ043giSZqGnhakrjwRWjkerIHPrRwm9okEIpw==",
+    "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.1": {
+      "sha512": "oIy8fQxxbUsSrrOvgBqlVgOeCtDmrcynnTG+FQufcUWBrwyPfwlUkCDB2vaiBeYPyT+20u9/HeuHeBf+H4F/8g==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.11",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
         "buildTransitive/net462/_._",
         "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
@@ -5212,7 +5304,7 @@
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.9.0.11.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.10.0.1.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -5334,6 +5426,19 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Http/2.1.0": {
+      "sha512": "vkSkGa1UIZVlAd18oDhrtoawN/q7fDemJcVpT9+28mP7bP0I8zKLSLRwqF++GmPs/7e0Aqlo6jpZm3P7YYS0ag==",
+      "type": "package",
+      "path": "microsoft.extensions.http/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.2.1.0.nupkg.sha512",
+        "microsoft.extensions.http.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Identity.Core/9.0.11": {
       "sha512": "JGHkoOj04m9WGiA2a8UK6r3L6lL2E/J61kFPYEG9PTkT1H2xWkZG1z8L9xvS/rnnuc07VM5zD/f3KSoW1+Gwjw==",
       "type": "package",
@@ -5402,15 +5507,14 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Logging.Abstractions/9.0.11": {
-      "sha512": "UKWFTDwtZQIoypyt1YPVsxTnDK+0sKn26+UeSGeNlkRQddrkt9EC6kP4g94rgO/WOZkz94bKNlF1dVZN3QfPFQ==",
+    "Microsoft.Extensions.Logging.Abstractions/10.0.1": {
+      "sha512": "YkmyiPIWAXVb+lPIrM0LE5bbtLOJkCiRTFiHpkVOvhI7uTvCfoOHLEN0LcsY56GpSD7NqX3gJNpsaDe87/B3zg==",
       "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/9.0.11",
+      "path": "microsoft.extensions.logging.abstractions/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
@@ -5460,6 +5564,8 @@
         "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
         "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll",
@@ -5468,7 +5574,7 @@
         "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.9.0.11.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.10.0.1.nupkg.sha512",
         "microsoft.extensions.logging.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -6229,6 +6335,93 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
+    "SendGrid/9.29.3": {
+      "sha512": "nb/zHePecN9U4/Bmct+O+lpgK994JklbCCNMIgGPOone/DngjQoMCHeTvkl+m0Nglvm0dqMEshmvB4fO8eF3dA==",
+      "type": "package",
+      "path": "sendgrid/9.29.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SendGrid.dll",
+        "lib/net40/SendGrid.pdb",
+        "lib/net40/SendGrid.xml",
+        "lib/net452/SendGrid.dll",
+        "lib/net452/SendGrid.pdb",
+        "lib/net452/SendGrid.xml",
+        "lib/netstandard1.3/SendGrid.dll",
+        "lib/netstandard1.3/SendGrid.pdb",
+        "lib/netstandard1.3/SendGrid.xml",
+        "lib/netstandard2.0/SendGrid.dll",
+        "lib/netstandard2.0/SendGrid.pdb",
+        "lib/netstandard2.0/SendGrid.xml",
+        "sendgrid.9.29.3.nupkg.sha512",
+        "sendgrid.nuspec"
+      ]
+    },
+    "SendGrid.CSharp.HTTP.Client/3.4.12": {
+      "sha512": "MQ2WJx0ST5JzrHDRA8+d+5NHJTI8p+/MTA7J8SY5NtMiH3wYgLjHhrZHXRtd1vh+3cXSeyRM/VYbmTbqC0Aa/A==",
+      "type": "package",
+      "path": "sendgrid.csharp.http.client/3.4.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/SendGrid.CSharp.HTTP.Client.dll",
+        "sendgrid.csharp.http.client.3.4.12.nupkg.sha512",
+        "sendgrid.csharp.http.client.nuspec"
+      ]
+    },
+    "SendGrid.Extensions.DependencyInjection/1.0.1": {
+      "sha512": "M3dHAkRIIDWvGNro5S25xjQ+nvUTomZ5er12TL0Re+G2UwIntMvO2OthECb3SV28AvOtDd4yZERjdHTrJ+gD1w==",
+      "type": "package",
+      "path": "sendgrid.extensions.dependencyinjection/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SendGrid.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/SendGrid.Extensions.DependencyInjection.xml",
+        "sendgrid.extensions.dependencyinjection.1.0.1.nupkg.sha512",
+        "sendgrid.extensions.dependencyinjection.nuspec"
+      ]
+    },
+    "SendGrid.SmtpApi/1.4.6": {
+      "sha512": "fBFC50+5q4ZCJJ/BfaSF7x/j/BnTg2qYkegwn1pi9xs2ZuPHeCeDTgTbvcktGtWS667tp3wKoxfbc6YJrccvXQ==",
+      "type": "package",
+      "path": "sendgrid.smtpapi/1.4.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SendGrid.SmtpApi.dll",
+        "lib/net40/SendGrid.SmtpApi.pdb",
+        "lib/net40/SendGrid.SmtpApi.xml",
+        "lib/net452/SendGrid.SmtpApi.dll",
+        "lib/net452/SendGrid.SmtpApi.pdb",
+        "lib/net452/SendGrid.SmtpApi.xml",
+        "lib/netstandard1.3/SendGrid.SmtpApi.dll",
+        "lib/netstandard1.3/SendGrid.SmtpApi.pdb",
+        "lib/netstandard1.3/SendGrid.SmtpApi.xml",
+        "lib/netstandard2.0/SendGrid.SmtpApi.dll",
+        "lib/netstandard2.0/SendGrid.SmtpApi.pdb",
+        "lib/netstandard2.0/SendGrid.SmtpApi.xml",
+        "sendgrid.smtpapi.1.4.6.nupkg.sha512",
+        "sendgrid.smtpapi.nuspec"
+      ]
+    },
+    "starkbank-ecdsa/1.3.3": {
+      "sha512": "OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
+      "type": "package",
+      "path": "starkbank-ecdsa/1.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/StarkbankEcdsa.dll",
+        "lib/net452/StarkbankEcdsa.dll",
+        "lib/netstandard1.3/StarkbankEcdsa.dll",
+        "lib/netstandard2.0/StarkbankEcdsa.dll",
+        "lib/netstandard2.1/StarkbankEcdsa.dll",
+        "starkbank-ecdsa.1.3.3.nupkg.sha512",
+        "starkbank-ecdsa.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/10.0.1": {
       "sha512": "177+JNAV5TNvy8gLCdrcWBY9n2jdkxiHQDY4vhaExeqUpKrOqDatCcm/kW3kze60GqfnZ2NobD/IKiAPOL+CEw==",
       "type": "package",
@@ -6831,25 +7024,32 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/4.3.0": {
-      "sha512": "tD6kosZnTAGdrEa0tZSuFyunMbt/5KYDnHdndJYGqZoNy00XVXyACd5d6KnE1YgYv3ne2CjtAfNXo/fwEhnKUA==",
+    "System.Diagnostics.DiagnosticSource/10.0.1": {
+      "sha512": "wVYO4/71Pk177uQ3TG8ZQFS3Pnmr98cF9pYxnpuIb/bMnbEWsdZZoLU/euv29mfSi2/Iuypj0TRUchPk7aqBGg==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/4.3.0",
+      "path": "system.diagnostics.diagnosticsource/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/net46/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net46/System.Diagnostics.DiagnosticSource.xml",
-        "lib/netstandard1.1/System.Diagnostics.DiagnosticSource.dll",
-        "lib/netstandard1.1/System.Diagnostics.DiagnosticSource.xml",
-        "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll",
-        "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.xml",
-        "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.dll",
-        "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
-        "system.diagnostics.diagnosticsource.nuspec"
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Diagnostics.DiagnosticSource.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
+        "lib/net10.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net10.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net462/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net462/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net8.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net8.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net9.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net9.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
+        "system.diagnostics.diagnosticsource.10.0.1.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Diagnostics.Tools/4.3.0": {
@@ -9913,7 +10113,12 @@
       "Microsoft.EntityFrameworkCore >= 9.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 10.0.0",
+      "Microsoft.Extensions.Logging.Abstractions >= 10.0.1",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.4",
+      "SendGrid >= 9.29.3",
+      "SendGrid.CSharp.HTTP.Client >= 3.4.12",
+      "SendGrid.Extensions.DependencyInjection >= 1.0.1",
+      "SendGrid.SmtpApi >= 1.4.6",
       "Swashbuckle.AspNetCore >= 10.0.1",
       "System.IdentityModel.Tokens.Jwt >= 8.15.0",
       "dotenv.net >= 4.0.0"
@@ -10018,9 +10223,29 @@
             "target": "Package",
             "version": "[10.0.0, )"
           },
+          "Microsoft.Extensions.Logging.Abstractions": {
+            "target": "Package",
+            "version": "[10.0.1, )"
+          },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[9.0.4, )"
+          },
+          "SendGrid": {
+            "target": "Package",
+            "version": "[9.29.3, )"
+          },
+          "SendGrid.CSharp.HTTP.Client": {
+            "target": "Package",
+            "version": "[3.4.12, )"
+          },
+          "SendGrid.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          },
+          "SendGrid.SmtpApi": {
+            "target": "Package",
+            "version": "[1.4.6, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -10085,6 +10310,16 @@
       "warningLevel": 1,
       "message": "Package 'RestSharp 105.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
       "libraryId": "RestSharp",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SendGrid.CSharp.HTTP.Client 3.4.12' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SendGrid.CSharp.HTTP.Client",
       "targetGraphs": [
         "net9.0"
       ]

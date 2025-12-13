@@ -162,3 +162,10 @@
 /Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/bin/Debug/net9.0/CryptoAuth.BLL.dll
 /Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/bin/Debug/net9.0/CryptoAuth.BLL.pdb
 /Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/bin/Debug/net9.0/dotenv.net.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/obj/Debug/net9.0/CryptoAnalyzer.Auth.sourcelink.json
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/bin/Debug/net9.0/SendGrid.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/bin/Debug/net9.0/SendGrid.CSharp.HTTP.Client.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/bin/Debug/net9.0/SendGrid.Extensions.DependencyInjection.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/bin/Debug/net9.0/SendGrid.SmtpApi.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/bin/Debug/net9.0/StarkbankEcdsa.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/bin/Debug/net9.0/System.Diagnostics.DiagnosticSource.dll

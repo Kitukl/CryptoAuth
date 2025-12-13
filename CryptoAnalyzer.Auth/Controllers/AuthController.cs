@@ -1,7 +1,9 @@
+using CryptoAuth.BLL.Commands;
 using CryptoAuth.BLL.Commands.LoginCommandHandler;
 using CryptoAuth.BLL.Commands.RefreshTokenCommandHandler;
 using CryptoAuth.BLL.Commands.RegisterCommandHandler;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CryptoAnalyzer.Auth.Controllers;
@@ -49,7 +51,7 @@ public class AuthController : ControllerBase
 
         return Ok(token);
     }
-
+    
     [HttpPost("refresh")]
     public async Task<ActionResult<string>> Refresh(RefreshTokenCommand command)
     {
@@ -65,5 +67,13 @@ public class AuthController : ControllerBase
         context?.Response.Cookies.Append("jwt", token.AccesToken);
         
         return Ok(token);
+    }
+
+    [HttpPost("forgot-password")]
+    public async Task<ActionResult<string>> ForgotPass(ForgotPasswordCommand command)
+    {
+        var result = await _mediatr.Send(command);
+        if (!result.isSuccess) return BadRequest(result.Errors);
+        return Ok(result.Value);
     }
 }

@@ -3,6 +3,7 @@ using System;
 using CryptoAuth.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CryptoAuth.DAL.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251213161817_ResetPasswordCodes")]
+    partial class ResetPasswordCodes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,10 +49,6 @@ namespace CryptoAuth.DAL.Migrations
 
                     b.Property<DateTime>("Expire")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("UserEmail")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.HasKey("Code");
 

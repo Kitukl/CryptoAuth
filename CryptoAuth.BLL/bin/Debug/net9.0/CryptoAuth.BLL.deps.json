@@ -14,6 +14,10 @@
           "JWT.Extensions.AspNetCore": "10.1.1",
           "Mailjet.Api": "3.0.0",
           "MediatR": "13.1.0",
+          "SendGrid": "9.29.3",
+          "SendGrid.CSharp.HTTP.Client": "3.4.12",
+          "SendGrid.Extensions.DependencyInjection": "1.0.1",
+          "SendGrid.SmtpApi": "1.4.6",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
         },
         "runtime": {
@@ -249,6 +253,13 @@
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.625.26613"
           }
+        }
+      },
+      "Microsoft.Extensions.Http/2.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Microsoft.Extensions.Options": "9.0.6"
         }
       },
       "Microsoft.Extensions.Identity.Core/9.0.6": {
@@ -500,6 +511,57 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "SendGrid/9.29.3": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2",
+          "starkbank-ecdsa": "1.3.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "assemblyVersion": "9.29.3.0",
+            "fileVersion": "9.29.3.0"
+          }
+        }
+      },
+      "SendGrid.CSharp.HTTP.Client/3.4.12": {
+        "runtime": {
+          "lib/net45/SendGrid.CSharp.HTTP.Client.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SendGrid.Extensions.DependencyInjection/1.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Http": "2.1.0",
+          "SendGrid": "9.29.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
+        }
+      },
+      "SendGrid.SmtpApi/1.4.6": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.SmtpApi.dll": {
+            "assemblyVersion": "1.4.6.0",
+            "fileVersion": "1.4.6.0"
+          }
+        }
+      },
+      "starkbank-ecdsa/1.3.3": {
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1089,7 +1151,11 @@
       "CryptoAuth.DAL/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.6",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "SendGrid": "9.29.3",
+          "SendGrid.CSharp.HTTP.Client": "3.4.12",
+          "SendGrid.Extensions.DependencyInjection": "1.0.1",
+          "SendGrid.SmtpApi": "1.4.6"
         },
         "runtime": {
           "CryptoAuth.DAL.dll": {
@@ -1252,6 +1318,13 @@
       "sha512": "sha512-0Zn6nR/6g+90MxskZyOOMPQvnPnrrGu6bytPwkV+azDcTtCSuQ1+GJUrg8Klmnrjk1i6zMpw2lXijl+tw7Q3kA==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.6",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Http/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vkSkGa1UIZVlAd18oDhrtoawN/q7fDemJcVpT9+28mP7bP0I8zKLSLRwqF++GmPs/7e0Aqlo6jpZm3P7YYS0ag==",
+      "path": "microsoft.extensions.http/2.1.0",
+      "hashPath": "microsoft.extensions.http.2.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Identity.Core/9.0.6": {
       "type": "package",
@@ -1483,6 +1556,41 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
+    },
+    "SendGrid/9.29.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nb/zHePecN9U4/Bmct+O+lpgK994JklbCCNMIgGPOone/DngjQoMCHeTvkl+m0Nglvm0dqMEshmvB4fO8eF3dA==",
+      "path": "sendgrid/9.29.3",
+      "hashPath": "sendgrid.9.29.3.nupkg.sha512"
+    },
+    "SendGrid.CSharp.HTTP.Client/3.4.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MQ2WJx0ST5JzrHDRA8+d+5NHJTI8p+/MTA7J8SY5NtMiH3wYgLjHhrZHXRtd1vh+3cXSeyRM/VYbmTbqC0Aa/A==",
+      "path": "sendgrid.csharp.http.client/3.4.12",
+      "hashPath": "sendgrid.csharp.http.client.3.4.12.nupkg.sha512"
+    },
+    "SendGrid.Extensions.DependencyInjection/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M3dHAkRIIDWvGNro5S25xjQ+nvUTomZ5er12TL0Re+G2UwIntMvO2OthECb3SV28AvOtDd4yZERjdHTrJ+gD1w==",
+      "path": "sendgrid.extensions.dependencyinjection/1.0.1",
+      "hashPath": "sendgrid.extensions.dependencyinjection.1.0.1.nupkg.sha512"
+    },
+    "SendGrid.SmtpApi/1.4.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fBFC50+5q4ZCJJ/BfaSF7x/j/BnTg2qYkegwn1pi9xs2ZuPHeCeDTgTbvcktGtWS667tp3wKoxfbc6YJrccvXQ==",
+      "path": "sendgrid.smtpapi/1.4.6",
+      "hashPath": "sendgrid.smtpapi.1.4.6.nupkg.sha512"
+    },
+    "starkbank-ecdsa/1.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
+      "path": "starkbank-ecdsa/1.3.3",
+      "hashPath": "starkbank-ecdsa.1.3.3.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

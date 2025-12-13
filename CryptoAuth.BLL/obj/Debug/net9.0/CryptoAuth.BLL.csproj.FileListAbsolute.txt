@@ -13,3 +13,4 @@
 /Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/refint/CryptoAuth.BLL.dll
 /Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAuth.BLL.pdb
 /Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/ref/CryptoAuth.BLL.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAuth.BLL.sourcelink.json

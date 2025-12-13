@@ -64,6 +64,22 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
+            },
+            "SendGrid.CSharp.HTTP.Client": {
+              "target": "Package",
+              "version": "[3.4.12, )"
+            },
+            "SendGrid.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "SendGrid.SmtpApi": {
+              "target": "Package",
+              "version": "[1.4.6, )"
             }
           },
           "imports": [
