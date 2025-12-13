@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoAnalyzer.Auth")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7834aaee6bdaebba9221c821cc28febcc04acf1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+571a7fc2b6708326cb5bd1b29c3a410378287fc1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoAnalyzer.Auth")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoAnalyzer.Auth")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
