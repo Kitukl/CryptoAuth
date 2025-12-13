@@ -1,2 +1,5 @@
 # CryptoAuth
 .env
+
+./obj
+./.idea
