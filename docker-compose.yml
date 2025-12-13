@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 435762198Oklik
+      POSTGRES_DB: crypto_auth_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  cryptoauth_service:
+    build:
+      context: .
+      dockerfile: CryptoAnalyzer.Auth/Dockerfile
+    ports:
+      - "4200:8080"
+    env_file:
+      - CryptoAnalyzer.Auth/.env
+    depends_on:
+      - db
+    restart: on-failure
+    
+volumes:
+  postgres_data:
