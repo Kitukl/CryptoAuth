@@ -38,7 +38,6 @@ public class EmailSender : IEmailSender
     
     private static string GenerateHtmlTemplate(string otpCode)
     {
-        // Ваш стилізований HTML-шаблон
         return $@"
         <div style=""font-family: Arial, sans-serif; background-color: #F4F0FF; padding: 20px; border-radius: 8px; max-width: 600px; margin: 20px auto; border: 1px solid #d0c0ff;"">
             
