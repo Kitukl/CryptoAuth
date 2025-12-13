@@ -76,4 +76,12 @@ public class AuthController : ControllerBase
         if (!result.isSuccess) return BadRequest(result.Errors);
         return Ok(result.Value);
     }
+
+    [HttpPost("reset-password")]
+    public async Task<ActionResult<string>> ResetPassword(ResetPasswordCommand command)
+    {
+        var result = await _mediatr.Send(command);
+        if (!result.isSuccess) return BadRequest(result.Errors);
+        return result.Value;
+    }
 }

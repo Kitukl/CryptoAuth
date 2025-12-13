@@ -28,7 +28,7 @@ public class ResetPasswordCommandHandler : IRequestHandler<ResetPasswordCommand,
 
         if (code.UserEmail != request.ressetPassword.Email || code.Code != request.ressetPassword.Code || code.Expire < DateTime.UtcNow) return Result<string>.Failure("Not correct code or expered!");
 
-        _repository.DeleteAsync(code.Code);
+       await _repository.DeleteAsync(code.Code);
 
         var removePassword = await _userManager.RemovePasswordAsync(user);
         if (!removePassword.Succeeded) return Result<string>.Failure("Remove password failed!");

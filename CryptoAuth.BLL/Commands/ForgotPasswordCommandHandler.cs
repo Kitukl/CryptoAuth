@@ -27,15 +27,14 @@ public class ForgotPasswordCommandHandler : IRequestHandler<ForgotPasswordComman
         if (user is null) return Result<string>.Failure("User not found!");
 
         var code = RandomNumberGenerator.GetInt32(900000) + 100000;
-        string message = $"Ваш код для відновлення паролю: {code}, дійсний протягом 2 хвилин";
         
-        await _emailSender.SendEmailAsync(user.Email, "Відновлення паролю", message);
+        await _emailSender.SendEmailAsync(user.Email, "Відновлення паролю", code.ToString());
 
         var codeEntity = new ResetPasswordCode()
         {
             Code = code.ToString(),
             UserEmail = user.Email,
-            Expire = DateTime.UtcNow.AddMinutes(2)
+            Expire = DateTime.UtcNow.AddMinutes(5)
         };
         await _repository.CreateAsync(codeEntity);
         
