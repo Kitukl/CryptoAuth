@@ -1,0 +1,15 @@
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/bin/Debug/net9.0/CryptoAuth.BLL.deps.json
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/bin/Debug/net9.0/CryptoAuth.BLL.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/bin/Debug/net9.0/CryptoAuth.BLL.pdb
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/bin/Debug/net9.0/CryptoAuth.DAL.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/bin/Debug/net9.0/CryptoAuth.DAL.pdb
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAuth.BLL.csproj.AssemblyReference.cache
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAuth.BLL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAuth.BLL.AssemblyInfoInputs.cache
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAuth.BLL.AssemblyInfo.cs
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAuth.BLL.csproj.CoreCompileInputs.cache
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAu.BF8D9425.Up2Date
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAuth.BLL.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/refint/CryptoAuth.BLL.dll
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/CryptoAuth.BLL.pdb
+/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/obj/Debug/net9.0/ref/CryptoAuth.BLL.dll
