@@ -51,6 +51,9 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<st
             return Result<string>.Failure(errors);
             
         }
+
+        user = await _userManager.FindByEmailAsync(user.Email);
+        
         var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
         token = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
 

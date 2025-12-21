@@ -24,7 +24,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<LoginRes
     {
         var user = await _userManager.FindByEmailAsync(request.loginRequest.Email);
         if (user is null) return Result<LoginResponse>.Failure("User not found!");
-        if (await _userManager.IsLockedOutAsync(user)) return Result<LoginResponse>.Failure("User blocked!");
+        if (await _userManager.IsEmailConfirmedAsync(user) == false) return Result<LoginResponse>.Failure("User email not confirmed!");
 
         var isEqual = await _userManager.CheckPasswordAsync(user, request.loginRequest.Password);
 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoAuth.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e1fe5692309792578025c977a0bca931f934531")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5fc3d830297b085c69ffdb49ab04982c022814a")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoAuth.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoAuth.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
