@@ -98,4 +98,16 @@ public class AuthController : ControllerBase
 
         return Ok("User logout!");
     }
+
+    [HttpPost("confirm-email")]
+    public async Task<ActionResult<string>> ConfirmEmail(ConfirmEmailCommand command)
+    {
+        var result = await _mediatr.Send(command);
+        if (!result.isSuccess)
+        {
+            return BadRequest(result.Errors);
+        }
+
+        return Ok(result.Value);
+    }
 }

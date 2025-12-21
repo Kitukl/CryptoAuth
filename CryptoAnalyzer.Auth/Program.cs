@@ -25,6 +25,8 @@ builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandle
 builder.Services.AddScoped(typeof(IRepository<RefreshToken>), typeof(RefreshTokenRepository));
 builder.Services.AddScoped(typeof(IRepository<ResetPasswordCode>), typeof(RessetPasswordCodeRepository));
 
+builder.Services.Configure<FrontEndOptions>(builder.Configuration.GetSection("FrontEnd"));
+
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 
@@ -42,7 +44,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(60);
 
     options.SignIn.RequireConfirmedEmail = true;
-}).AddEntityFrameworkStores<AuthDbContext>();
+}).AddEntityFrameworkStores<AuthDbContext>().AddDefaultTokenProviders();
 
 builder.Services.AddMediatR(configuration => configuration.RegisterServicesFromAssemblies(typeof(Program).Assembly, typeof(RegisterCommandHandler).Assembly));
 

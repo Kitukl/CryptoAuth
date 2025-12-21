@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
-  
   db:
     image: postgres:15-alpine
+    container_name: postgres_db
     restart: always
     environment:
       POSTGRES_USER: postgres
@@ -13,6 +11,22 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - crypto_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_ui
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    networks:
+      - crypto_network
 
   cryptoauth_service:
     build:
@@ -25,6 +39,12 @@ services:
     depends_on:
       - db
     restart: on-failure
-    
+    networks:
+      - crypto_network
+
 volumes:
   postgres_data:
+
+networks:
+  crypto_network:
+    driver: bridge
