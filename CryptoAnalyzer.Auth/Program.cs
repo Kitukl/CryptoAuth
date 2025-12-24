@@ -56,13 +56,16 @@ builder.Services.AddJwtAuthentication(builder.Services.BuildServiceProvider().Ge
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 
+var frontEndUrl = builder.Configuration.GetValue<string>("FrontEnd:Url") ?? "http://localhost:5174";
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
+        policy.WithOrigins(frontEndUrl);
         policy.AllowAnyHeader();
         policy.AllowAnyMethod();
-        policy.AllowAnyOrigin();
+        policy.AllowCredentials();
     });
 });
 
@@ -71,11 +74,12 @@ builder.Services.AddScoped<JWTProvider>();
 var app = builder.Build();
 
 app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwaggerUI(); 
+
+app.UseCors();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.UseCors();
 app.Run();
