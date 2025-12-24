@@ -1,11 +1,10 @@
 using CryptoAuth.DAL.Entities;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CryptoAuth.DAL;
 
-public class AuthDbContext(DbContextOptions<AuthDbContext> options) : IdentityDbContext<IdentityUser>(options)
+public class AuthDbContext(DbContextOptions<AuthDbContext> options) : IdentityDbContext<User>(options)
 {
     public DbSet<RefreshToken> RefreshTokens { get; set; }
     public DbSet<ResetPasswordCode> ResetPasswordCodes { get; set; }

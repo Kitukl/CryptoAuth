@@ -11,11 +11,11 @@ public record ForgotPasswordCommand(string email) : IRequest<Result<string>>;
 
 public class ForgotPasswordCommandHandler : IRequestHandler<ForgotPasswordCommand, Result<string>>
 {
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<User> _userManager;
     private readonly IEmailSender _emailSender;
     private readonly IRepository<ResetPasswordCode> _repository;
 
-    public ForgotPasswordCommandHandler(UserManager<IdentityUser> userManager, IEmailSender emailSender, IRepository<ResetPasswordCode> repository)
+    public ForgotPasswordCommandHandler(UserManager<User> userManager, IEmailSender emailSender, IRepository<ResetPasswordCode> repository)
     {
         _userManager = userManager;
         _emailSender = emailSender;

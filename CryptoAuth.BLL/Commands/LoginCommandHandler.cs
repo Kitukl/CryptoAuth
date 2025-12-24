@@ -10,11 +10,11 @@ public record LoginCommand(LoginRequest loginRequest) : IRequest<Result<LoginRes
 
 public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<LoginResponse>>
 {
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<User> _userManager;
     private readonly JWTProvider _provider;
     private readonly IRepository<RefreshToken> _repository;
 
-    public LoginCommandHandler(UserManager<IdentityUser> userManager, JWTProvider provider, IRepository<RefreshToken> repository)
+    public LoginCommandHandler(UserManager<User> userManager, JWTProvider provider, IRepository<RefreshToken> repository)
     {
         _userManager = userManager;
         _provider = provider;

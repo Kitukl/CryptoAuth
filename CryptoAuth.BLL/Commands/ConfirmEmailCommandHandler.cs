@@ -1,5 +1,6 @@
 using System.Text;
 using CryptoAuth.BLL.DTOs;
+using CryptoAuth.DAL.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
@@ -10,9 +11,9 @@ public record ConfirmEmailCommand(ConfirmEmailRequest request) : IRequest<Result
 
 public class ConfirmEmailCommandHandler : IRequestHandler<ConfirmEmailCommand, Result<string>>
 {
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<User> _userManager;
 
-    public ConfirmEmailCommandHandler(UserManager<IdentityUser> userManager)
+    public ConfirmEmailCommandHandler(UserManager<User> userManager)
     {
         _userManager = userManager;
     }

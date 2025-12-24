@@ -15,10 +15,10 @@ public class JWTProvider
 {
     private readonly IRepository<RefreshToken> _repository;
     private readonly IConfiguration _configuration;
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<User> _userManager;
     private readonly JWTOptions _jwtOptions;
 
-    public JWTProvider(IOptions<JWTOptions> jwtOptions, IRepository<RefreshToken> repository, IConfiguration configuration, UserManager<IdentityUser> userManager)
+    public JWTProvider(IOptions<JWTOptions> jwtOptions, IRepository<RefreshToken> repository, IConfiguration configuration, UserManager<User> userManager)
     {
         _repository = repository;
         _configuration = configuration;
@@ -26,7 +26,7 @@ public class JWTProvider
         _jwtOptions = jwtOptions.Value;
     }
 
-    public string GenerateToken(IdentityUser user)
+    public string GenerateToken(User user)
     {
         var signingCredentials = new SigningCredentials(
             new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SecretKey)), SecurityAlgorithms.HmacSha512);
@@ -61,7 +61,7 @@ public class JWTProvider
         });
     }
 
-    public async Task<string> GenerateRefreshToken(IdentityUser user)
+    public async Task<string> GenerateRefreshToken(User user)
     {
         var expire = _configuration.GetValue<int>("JwtOptions:RefreshToken");
         var token = new RefreshToken()

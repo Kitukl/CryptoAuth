@@ -11,9 +11,9 @@ public record ResetPasswordCommand(RessetPasswordRequest ressetPassword) : IRequ
 public class ResetPasswordCommandHandler : IRequestHandler<ResetPasswordCommand, Result<string>>
 {
     private readonly IRepository<ResetPasswordCode> _repository;
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<User> _userManager;
 
-    public ResetPasswordCommandHandler(IRepository<ResetPasswordCode> repository, UserManager<IdentityUser> userManager)
+    public ResetPasswordCommandHandler(IRepository<ResetPasswordCode> repository, UserManager<User> userManager)
     {
         _repository = repository;
         _userManager = userManager;

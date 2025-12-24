@@ -32,6 +32,7 @@ public class EmailSender : IEmailSender
         if (!response.IsSuccessStatusCode)
         {
             var errorBody = await response.Body.ReadAsStringAsync();
+            _logger.LogError($"SendGrid API failed with status {response.StatusCode}. Details: {errorBody}");
             throw new Exception($"SendGrid API failed with status {response.StatusCode}. Details: {errorBody}"); 
         }
     }

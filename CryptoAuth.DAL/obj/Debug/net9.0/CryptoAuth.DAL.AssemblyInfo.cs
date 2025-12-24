@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoAuth.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e1fe5692309792578025c977a0bca931f934531")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29c8a82991b96db541ca0ccbc84c7148dd42b9aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoAuth.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoAuth.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

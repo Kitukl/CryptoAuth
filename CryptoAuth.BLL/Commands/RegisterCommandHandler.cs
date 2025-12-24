@@ -1,6 +1,7 @@
 using System.Text;
 using CryptoAuth.BLL.DTOs;
 using CryptoAuth.BLL.Validations;
+using CryptoAuth.DAL.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -13,12 +14,12 @@ public record RegisterCommand(RegisterRequest registerRequest) : IRequest<Result
 
 public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<string>>
 {
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<User> _userManager;
     private readonly RegisterValidator _validator;
     private readonly IEmailSender _sender;
     private readonly FrontEndOptions _options;
 
-    public RegisterCommandHandler(UserManager<IdentityUser> userManager, RegisterValidator validator, IEmailSender sender, IOptions<FrontEndOptions> options)
+    public RegisterCommandHandler(UserManager<User> userManager, RegisterValidator validator, IEmailSender sender, IOptions<FrontEndOptions> options)
     {
         _userManager = userManager;
         _validator = validator;
@@ -36,7 +37,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<st
             return Result<string>.Failure(errors);
         }
         
-        var user = new IdentityUser
+        var user = new User
         {
             UserName = request.registerRequest.Username,
             Email = request.registerRequest.Email
