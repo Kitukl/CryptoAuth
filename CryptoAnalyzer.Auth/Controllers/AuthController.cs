@@ -1,7 +1,10 @@
+using System.Security.Claims;
 using CryptoAuth.BLL.Commands;
 using CryptoAuth.BLL.Commands.LoginCommandHandler;
 using CryptoAuth.BLL.Commands.RefreshTokenCommandHandler;
 using CryptoAuth.BLL.Commands.RegisterCommandHandler;
+using CryptoAuth.BLL.DTOs;
+using CryptoAuth.BLL.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -110,4 +113,24 @@ public class AuthController : ControllerBase
 
         return Ok(result.Value);
     }
+
+    [HttpGet("get-user")]
+    public async Task<ActionResult<UserResponse>> GetUser()
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+
+        if (email is null)
+        {
+            return Unauthorized("User not logged in system");
+        }
+
+        var result = await _mediatr.Send(new GetUserQuery(email));
+        if (!result.isSuccess)
+        {
+            return BadRequest(result.Errors);
+        }
+
+        return Ok(result.Value);
+    }
+    
 }

@@ -56,7 +56,7 @@ builder.Services.AddJwtAuthentication(builder.Services.BuildServiceProvider().Ge
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 
-var frontEndUrl = builder.Configuration.GetValue<string>("FrontEnd:Url") ?? "http://localhost:5174";
+var frontEndUrl = builder.Configuration.GetValue<string>("FrontEnd:Url") ?? "http://localhost:5173";
 
 builder.Services.AddCors(options =>
 {
