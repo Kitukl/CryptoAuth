@@ -28,7 +28,10 @@ public class ForgotPasswordCommandHandler : IRequestHandler<ForgotPasswordComman
 
         var token = await _repository.GetByEmailAsync(user.Email);
 
-        await _repository.DeleteAsync(token.Code);
+        if (token is not null)
+        {
+            await _repository.DeleteAsync(token.Code);
+        }
 
         var code = RandomNumberGenerator.GetInt32(900000) + 100000;
         
