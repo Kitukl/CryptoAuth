@@ -41,6 +41,16 @@ services:
     restart: on-failure
     networks:
       - crypto_network
+  
+  azurite_blob:
+    image: mcr.microsoft.com/azure-storage/azurite:latest
+    container_name: azurite_blob
+    volumes:
+      - ./.containers/blob_storage/data:/data
+    ports:
+      - "10000:10000"
+    command:
+      - "azurite-blob --blobHost 0.0.0.0 -l /data"
 
 volumes:
   postgres_data:

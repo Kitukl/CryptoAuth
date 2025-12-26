@@ -26,6 +26,10 @@ public class ForgotPasswordCommandHandler : IRequestHandler<ForgotPasswordComman
         var user = await _userManager.FindByEmailAsync(request.email);
         if (user is null) return Result<string>.Failure("User not found!");
 
+        var token = await _repository.GetByEmailAsync(user.Email);
+
+        await _repository.DeleteAsync(token.Code);
+
         var code = RandomNumberGenerator.GetInt32(900000) + 100000;
         
         await _emailSender.SendEmailAsync(user.Email, "Відновлення паролю", code.ToString());

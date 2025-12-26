@@ -22,6 +22,12 @@ public class RessetPasswordCodeRepository : IRepository<ResetPasswordCode>
         return code;
     }
 
+    public async Task<ResetPasswordCode> GetByEmailAsync(string email)
+    {
+        var code = await _dbContext.ResetPasswordCodes.FirstOrDefaultAsync(t => t.UserEmail == email);
+        return code;
+    }
+
     public async Task<string> CreateAsync(ResetPasswordCode obj)
     {
         await _dbContext.ResetPasswordCodes.AddAsync(obj);

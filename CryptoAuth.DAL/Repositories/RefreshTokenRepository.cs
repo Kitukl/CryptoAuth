@@ -21,6 +21,11 @@ public class RefreshTokenRepository : IRepository<RefreshToken>
         return await _dbContext.RefreshTokens.FirstOrDefaultAsync(token => token.Token == id);
     }
 
+    public Task<RefreshToken> GetByEmailAsync(string email)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<string> CreateAsync(RefreshToken obj)
     {
         await _dbContext.RefreshTokens.AddAsync(obj);
