@@ -114,6 +114,7 @@ public class AuthController : ControllerBase
         return Ok(result.Value);
     }
 
+    [Authorize]
     [HttpGet("get-user")]
     public async Task<ActionResult<UserResponse>> GetUser()
     {
@@ -132,5 +133,18 @@ public class AuthController : ControllerBase
 
         return Ok(result.Value);
     }
-    
+
+    [Authorize]
+    [HttpPut]
+    [Consumes("multipart/form-data")]
+    public async Task<ActionResult<UserResponse>> UpdateUser([FromForm] UpdateUserCommand command)
+    {
+        var result = await _mediatr.Send(command);
+        if (!result.isSuccess)
+        {
+            return BadRequest(result.Errors);
+        }
+
+        return Ok(result.Value);
+    }
 }

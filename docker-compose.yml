@@ -38,6 +38,7 @@ services:
       - CryptoAnalyzer.Auth/.env
     depends_on:
       - db
+      - azurite_blob
     restart: on-failure
     networks:
       - crypto_network
@@ -49,8 +50,9 @@ services:
       - ./.containers/blob_storage/data:/data
     ports:
       - "10000:10000"
-    command:
-      - "azurite-blob --blobHost 0.0.0.0 -l /data"
+    command: ["azurite-blob", "--blobHost", "0.0.0.0", "-l", "/data"]
+    networks:
+      - crypto_network
 
 volumes:
   postgres_data:

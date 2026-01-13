@@ -1,3 +1,4 @@
+using Azure.Storage.Blobs;
 using CryptoAnalyzer.Auth.Extensions;
 using CryptoAuth.BLL.Commands;
 using CryptoAuth.BLL.Commands.RegisterCommandHandler;
@@ -70,6 +71,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddScoped<JWTProvider>();
+builder.Services.AddSingleton(x => new BlobServiceClient(builder.Configuration["BlobStorage:ConnectionString"]));
 
 var app = builder.Build();
 
