@@ -88,6 +88,7 @@ public class AuthController : ControllerBase
         return result.Value;
     }
 
+    [Authorize]
     [HttpPost("logout")]
     public async Task<ActionResult<string>> Logout(LogoutCommand command)
     {
@@ -115,6 +116,7 @@ public class AuthController : ControllerBase
     }
 
     [Authorize]
+    [Authorize]
     [HttpGet("get-user")]
     public async Task<ActionResult<UserResponse>> GetUser()
     {
@@ -134,6 +136,7 @@ public class AuthController : ControllerBase
         return Ok(result.Value);
     }
 
+    [Authorize]
     [Authorize]
     [HttpPut]
     [Consumes("multipart/form-data")]
