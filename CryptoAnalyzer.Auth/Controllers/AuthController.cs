@@ -72,6 +72,7 @@ public class AuthController : ControllerBase
         return Ok(token);
     }
 
+    [Authorize]
     [HttpPost("forgot-password")]
     public async Task<ActionResult<string>> ForgotPass(ForgotPasswordCommand command)
     {
@@ -79,7 +80,7 @@ public class AuthController : ControllerBase
         if (!result.isSuccess) return BadRequest(result.Errors);
         return Ok(result.Value);
     }
-
+    
     [HttpPost("reset-password")]
     public async Task<ActionResult<string>> ResetPassword(ResetPasswordCommand command)
     {
@@ -136,7 +137,6 @@ public class AuthController : ControllerBase
         return Ok(result.Value);
     }
 
-    [Authorize]
     [Authorize]
     [HttpPut]
     [Consumes("multipart/form-data")]

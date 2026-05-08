@@ -14,17 +14,18 @@ services:
     networks:
       - crypto_network
 
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin_ui
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq_service
     restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
     ports:
-      - "5050:80"
-    depends_on:
-      - db
+      - "5672:5672"  
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
     networks:
       - crypto_network
 
@@ -39,6 +40,7 @@ services:
     depends_on:
       - db
       - azurite_blob
+      - rabbitmq 
     restart: on-failure
     networks:
       - crypto_network
@@ -56,6 +58,7 @@ services:
 
 volumes:
   postgres_data:
+  rabbitmq_data:
 
 networks:
   crypto_network:
