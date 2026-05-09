@@ -1,6 +1,10 @@
 using System.Security.Cryptography;
+using System.Text.Json;
+using CryptoAnalyzer.Core.Events;
+using CryptoAuth.BLL.DTOs;
 using CryptoAuth.DAL.Entities;
 using CryptoAuth.DAL.Repositories;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -14,12 +18,14 @@ public class ForgotPasswordCommandHandler : IRequestHandler<ForgotPasswordComman
     private readonly UserManager<User> _userManager;
     private readonly IEmailSender _emailSender;
     private readonly IRepository<ResetPasswordCode> _repository;
+    private readonly IPublishEndpoint _eventBus;
 
-    public ForgotPasswordCommandHandler(UserManager<User> userManager, IEmailSender emailSender, IRepository<ResetPasswordCode> repository)
+    public ForgotPasswordCommandHandler(UserManager<User> userManager, IEmailSender emailSender, IRepository<ResetPasswordCode> repository, IPublishEndpoint eventBus)
     {
         _userManager = userManager;
         _emailSender = emailSender;
         _repository = repository;
+        _eventBus = eventBus;
     }
     public async Task<Result<string>> Handle(ForgotPasswordCommand request, CancellationToken cancellationToken)
     {
@@ -35,9 +41,19 @@ public class ForgotPasswordCommandHandler : IRequestHandler<ForgotPasswordComman
 
         var code = RandomNumberGenerator.GetInt32(900000) + 100000;
         
-        await _emailSender.SendEmailAsync(user.Email, "Відновлення паролю", code.ToString());
+        //await _emailSender.SendEmailAsync(user.Email, "Відновлення паролю", code.ToString());
 
-        var codeEntity = new ResetPasswordCode()
+        await _eventBus.Publish(new NotificationEvent
+        {
+            Email = user.Email,
+            NotificationType = NotificationType.PasswordReset,
+            Value = JsonSerializer.Serialize(new ForgotPasswordMessage
+            {
+                Code = code.ToString()
+            })
+        });
+
+        var codeEntity = new ResetPasswordCode
         {
             Code = code.ToString(),
             UserEmail = user.Email,

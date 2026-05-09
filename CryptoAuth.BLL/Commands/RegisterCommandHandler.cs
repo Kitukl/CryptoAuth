@@ -1,7 +1,10 @@
 using System.Text;
+using System.Text.Json;
+using CryptoAnalyzer.Core.Events;
 using CryptoAuth.BLL.DTOs;
 using CryptoAuth.BLL.Validations;
 using CryptoAuth.DAL.Entities;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -17,13 +20,15 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<st
     private readonly UserManager<User> _userManager;
     private readonly RegisterValidator _validator;
     private readonly IEmailSender _sender;
+    private readonly IPublishEndpoint _eventBus;
     private readonly FrontEndOptions _options;
 
-    public RegisterCommandHandler(UserManager<User> userManager, RegisterValidator validator, IEmailSender sender, IOptions<FrontEndOptions> options)
+    public RegisterCommandHandler(UserManager<User> userManager, RegisterValidator validator, IEmailSender sender, IOptions<FrontEndOptions> options, IPublishEndpoint eventBus)
     {
         _userManager = userManager;
         _validator = validator;
         _sender = sender;
+        _eventBus = eventBus;
         _options = options.Value;
     }
     public async Task<Result<string>> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -60,7 +65,18 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<st
 
         var frontEndUrl = _options.Host;        
         var confirmationUrl = $"{frontEndUrl}/confirm-email?userId={user.Id}&token={token}";
-        await _sender.SendEmailAsync(user.Email, "Підтвердження пошти", confirmationUrl);
+
+        await _eventBus.Publish(new NotificationEvent
+        {
+            Email = user.Email,
+            NotificationType = NotificationType.EmailConfirmation,
+            Value = JsonSerializer.Serialize(new ConfirmationEmailMessage
+            {
+                Url = confirmationUrl
+            })
+        });
+        
+        //await _sender.SendEmailAsync(user.Email, "Підтвердження пошти", confirmationUrl);
         
         return Result<string>.Success(user.Id);
     }

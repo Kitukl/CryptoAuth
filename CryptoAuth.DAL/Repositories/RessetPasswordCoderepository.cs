@@ -28,6 +28,11 @@ public class RessetPasswordCodeRepository : IRepository<ResetPasswordCode>
         return code;
     }
 
+    public Task<List<ResetPasswordCode>> GetTrigerForNotification(string coin, double? sentiment)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<string> CreateAsync(ResetPasswordCode obj)
     {
         await _dbContext.ResetPasswordCodes.AddAsync(obj);

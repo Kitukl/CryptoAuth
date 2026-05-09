@@ -5,4 +5,6 @@ namespace CryptoAuth.DAL.Entities;
 public class User : IdentityUser
 {
     public string? AvatarUrl { get; set; }
+    public double? Sentiment { get; set; }
+    public string? Coin { get; set; }
 }

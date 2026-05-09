@@ -2,6 +2,7 @@ using Azure.Storage.Blobs;
 using CryptoAnalyzer.Auth.Extensions;
 using CryptoAuth.BLL.Commands;
 using CryptoAuth.BLL.Commands.RegisterCommandHandler;
+using CryptoAuth.BLL.Consumers;
 using CryptoAuth.BLL.Exctentions;
 using CryptoAuth.BLL.Validations;
 using CryptoAuth.DAL;
@@ -9,6 +10,7 @@ using CryptoAuth.DAL.Entities;
 using CryptoAuth.DAL.Repositories;
 using dotenv.net;
 using FluentValidation;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -28,10 +30,18 @@ builder.Services.AddScoped(typeof(IRepository<ResetPasswordCode>), typeof(Resset
 
 builder.Services.Configure<FrontEndOptions>(builder.Configuration.GetSection("FrontEnd"));
 
-builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
-builder.Services.AddScoped<IEmailSender, EmailSender>();
-
-builder.Services.AddScoped<ISendGridClient>(sg => new SendGridClient(builder.Configuration.GetValue<string>("EmailSettings:ApiKey")));
+builder.Services.AddMassTransit(config =>
+{
+    config.AddConsumer<NewsEventConsumer>();
+    config.UsingRabbitMq((ct, cfg) =>
+    {
+        cfg.Host(builder.Configuration.GetConnectionString("EventBus"));
+        cfg.ReceiveEndpoint("auth-consumer", c =>
+        {
+            c.ConfigureConsumer<NewsEventConsumer>(ct);
+        });
+    });
+});
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();

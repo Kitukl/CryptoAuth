@@ -3527,6 +3527,8 @@
           "FluentValidation": "12.0.0",
           "JWT.Extensions.AspNetCore": "10.1.1",
           "Mailjet.Api": "3.0.0",
+          "MassTransit": "9.1.0",
+          "MassTransit.RabbitMQ": "9.1.0",
           "MediatR": "13.1.0",
           "SendGrid": "9.29.3",
           "SendGrid.CSharp.HTTP.Client": "3.4.12",
@@ -10637,35 +10639,36 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kitol\\.nuget\\packages\\": {}
+    "/Users/kituk/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAnalyzer.Auth\\CryptoAnalyzer.Auth.csproj",
+      "projectUniqueName": "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth.csproj",
       "projectName": "CryptoAnalyzer.Auth",
-      "projectPath": "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAnalyzer.Auth\\CryptoAnalyzer.Auth.csproj",
-      "packagesPath": "C:\\Users\\kitol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAnalyzer.Auth\\obj\\",
+      "projectPath": "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth.csproj",
+      "packagesPath": "/Users/kituk/.nuget/packages/",
+      "outputPath": "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAnalyzer.Auth/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kitol\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/kituk/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAuth.BLL\\CryptoAuth.BLL.csproj": {
-              "projectPath": "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAuth.BLL\\CryptoAuth.BLL.csproj"
+            "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/CryptoAuth.BLL.csproj": {
+              "projectPath": "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.BLL/CryptoAuth.BLL.csproj"
             },
-            "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAuth.DAL\\CryptoAuth.DAL.csproj": {
-              "projectPath": "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAuth.DAL\\CryptoAuth.DAL.csproj"
+            "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/CryptoAuth.DAL.csproj": {
+              "projectPath": "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/CryptoAuth.DAL.csproj"
             }
           }
         }
@@ -10802,7 +10805,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

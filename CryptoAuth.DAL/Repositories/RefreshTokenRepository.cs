@@ -26,6 +26,11 @@ public class RefreshTokenRepository : IRepository<RefreshToken>
         throw new NotImplementedException();
     }
 
+    public Task<List<RefreshToken>> GetTrigerForNotification(string coin, double? sentiment)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<string> CreateAsync(RefreshToken obj)
     {
         await _dbContext.RefreshTokens.AddAsync(obj);

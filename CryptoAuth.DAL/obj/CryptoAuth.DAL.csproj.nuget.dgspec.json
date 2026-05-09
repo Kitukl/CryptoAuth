@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAuth.DAL\\CryptoAuth.DAL.csproj": {}
+    "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/CryptoAuth.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAuth.DAL\\CryptoAuth.DAL.csproj": {
+    "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/CryptoAuth.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAuth.DAL\\CryptoAuth.DAL.csproj",
+        "projectUniqueName": "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/CryptoAuth.DAL.csproj",
         "projectName": "CryptoAuth.DAL",
-        "projectPath": "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAuth.DAL\\CryptoAuth.DAL.csproj",
-        "packagesPath": "C:\\Users\\kitol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kitol\\RiderProjects\\CryptoAuth\\CryptoAuth.DAL\\obj\\",
+        "projectPath": "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/CryptoAuth.DAL.csproj",
+        "packagesPath": "/Users/kituk/.nuget/packages/",
+        "outputPath": "/Users/kituk/RiderProjects/CryptoAnalyzer.Auth/CryptoAuth.DAL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kitol\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/kituk/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -97,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
